@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>4L Sand N Sound - Partenaires</title>
+       
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+       <link rel="stylesheet" media="screen and (min-width: 1024px)" href="main.css" type="text/css" />
+        <link rel="stylesheet" media="screen and (max-width: 1024px) and (min-width: 780px) " href="small.css" type="text/css" />
+        <link rel="stylesheet" media="screen and (max-width: 780px) and (min-width: 480px)" href="x-small.css" type="text/css" />
+        <link rel="stylesheet" media="screen and (max-width: 480px)" href="xx-small.css" type="text/css" />
+        
+        <script src="jquery-2.1.1.js"></script>
+        <script src="mesScripts.js"></script>
+        <script type="text/javascript">
+          //BOUTON RETOUR HAUT DE PAGE
+        var timeOut;
+function backtotop() {
+  if (document.body.scrollTop!==0 || document.documentElement.scrollTop!==0){
+    window.scrollBy(0,-50);
+    timeOut=setTimeout('backtotop()',25);
+  }
+  else clearTimeout(timeOut);
+}
+        
+   </script>
+    </head>
+    
+    
+      <body class="fond">
+  <img class="logoTop" style="display:none"/>
+        <!--===========================================
+        MENU
+        ===========================================-->
+        <div class="bandeau">
+        <ul class="liste" >
+            <li id="accueil" class="onglet"><a href="index.html">Accueil</a></li>
+            <li id="apropos" class="onglet"><a href="a_propos.html">A propos</a></li>
+            <li id="actualites" class="onglet"><a href="actualites.html">Actualités</a></li>
+            <li id="noussponsoriser" class="onglet"><a href="nous_sponsoriser.html">Nous sponsoriser</a></li>
+            <li id="nospartenaires" class="onglet"><a href="nos_partenaires.html">Nos partenaires</a></li>
+            <li id="contact" class="onglet"><a href="nous-contacter.html">Contact</a></li>       
+        
+        </ul>
+        
+        </div> 
+
+
+    <div class="infos">
+        <h1>Nos partenaires</h1>
+        
+        Ils nous soutiennent déjà, n'hésitez pas à nous contacter si vous aussi voulez faire partie de l'aventure !
+        
+        <br/>
+        <br/>
+        
+        <ul class="partenaires">
+            <li onclick='window.open("http://www.insa-toulouse.fr/fr/index.html");' id="insat" ></li>      
+            <li onclick='window.open("http://www.insa-toulouse.fr/fr/index.html");' id="sonic" ></li>      
+            <li onclick='window.open("http://www.insa-toulouse.fr/fr/index.html");' id="caisse_epargne" ></li>      
+        </ul>
+      
+        
+    </div>
+         
+      <img class="backtotop" src="img/backToTop.png" onclick="backtotop();return false;" alt="Retour haut de page">    
+    </body>
+   
+     <div class="footer"></div>  
+   
+   
+</html>
+<!--
+
+Bloc de commentaires 
+-->
+

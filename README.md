@@ -1,2 +1,4 @@
-# SandNSound
-Website for a team participating at the 4L Trophy
+Symfony
+=======
+
+A Symfony project created on September 22, 2015, 7:56 pm.

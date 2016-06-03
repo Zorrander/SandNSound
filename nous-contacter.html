@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>4L Sand N Sound - Contact</title>
+       
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+        
+        <link rel="stylesheet" media="screen and (min-width: 1024px)" href="main.css" type="text/css" />
+        <link rel="stylesheet" media="screen and (max-width: 1024px) and (min-width: 780px) " href="small.css" type="text/css" />
+        <link rel="stylesheet" media="screen and (max-width: 780px) and (min-width: 480px)" href="x-small.css" type="text/css" />
+        <link rel="stylesheet" media="screen and (max-width: 480px)" href="xx-small.css" type="text/css" />
+        
+        <script src="jquery-2.1.1.js"></script>
+        <script src="mesScripts.js"></script>
+        <script type="text/javascript">
+       
+          //BOUTON RETOUR HAUT DE PAGE
+        var timeOut;
+function backtotop() {
+  if (document.body.scrollTop!==0 || document.documentElement.scrollTop!==0){
+    window.scrollBy(0,-50);
+    timeOut=setTimeout('backtotop()',25);
+  }
+  else clearTimeout(timeOut);
+}
+
+            function verif () 
+            { 
+                v=document.contact.user_name.value; 
+                x=document.contact.user_email.value; 
+                y=document.contact.user_phone.value; 
+                z=document.contact.user_message.value; 
+                var erreur = false ; 
+                //Vérifie que le numéro a une longueur standard
+                if (y.length < 10) 
+                { 
+                    alert ("Ce numéro n'est pas valide") 
+                    erreur= true; 
+                } 
+                //que l'adresse mail comporte bien un @
+                if (x.indexOf('@')==-1) 
+                { 
+                    alert("E-mail est incorrecte!") 
+                    erreur= true;  
+                } 
+                
+                //qu'aucun des champs ne soit vide
+                if(x=="") 
+                { 
+                    alert("Champ vide!") 
+                    erreur= true;  
+                } 
+                if(v=="") 
+                { 
+                    alert("Champ Vide!") 
+                    erreur= true; 
+                } 
+                if(z=="") 
+                { 
+                    alert("Champ Vide!") 
+                    erreur= true; 
+                } 
+              if (erreur == false){
+                document.forms['contact'].submit();
+              }
+            }
+            
+ 
+            function effacer(value_defaut,id)
+            {
+            truk=document.getElementById(id);
+            type=truk.tagName;
+            type=type.toLowerCase();
+               if (type=='input')
+               {
+                  if (truk.value==value_defaut)
+                     truk.value='';
+               }
+               else if (type=='textarea')
+               {
+                  if (truk.innerHTML==value_defaut)
+                     truk.innerHTML='';
+               }
+            }
+
+                        function afficher_defaut(value_defaut,id){
+            truk=document.getElementById(id);
+            type=truk.tagName;
+            type=type.toLowerCase();
+               if (type=='input')
+               {
+                  if (truk.value=='')
+                     truk.value=value_defaut;
+               } 
+               else if (type=='textarea')
+               {
+                 if (truk.innerHTML=='')
+                    truk.innerHTML=value_defaut;
+               }
+
+                        }
+            </script>
+    </head>
+    
+   <body>  <img class="logoTop" style="display:none"/>
+<!--===========================================
+        MENU
+        ===========================================-->
+        <div class="bandeau">
+        <ul class="liste" >
+            <li id="accueil" class="onglet"><a href="index.html">Accueil</a></li>
+            <li id="apropos" class="onglet"><a href="a_propos.html">A propos</a></li>
+            <li id="actualites" class="onglet"><a href="actualites.html">Actualités</a></li>
+            <li id="noussponsoriser" class="onglet"><a href="nous_sponsoriser.html">Nous sponsoriser</a></li>
+            <li id="nospartenaires" class="onglet"><a href="nos_partenaires.html">Nos partenaires</a></li>
+            <li id="contact" class="onglet"><a href="nous-contacter.html">Contact</a></li>       
+        
+        </ul>
+        
+        </div>
+        
+    <img class="logoContact" src="img/logo.png"/>       
+<form id="form" name="contact" action="contact.php" method="post">
+
+    <div class="coordonnees_contact">
+        <div>
+            <input type="text" id="nom" name="user_name" value="Nom" onblur="afficher_defaut('Nom',this.id);" onfocus="effacer('Nom',this.id);"/>
+        </div>
+        <div>
+            <input type="email" id="courriel" value="Email" name="user_email" onblur="afficher_defaut('Email',this.id);" onfocus="effacer('Email',this.id);"/>
+        </div>
+        <div>
+            <input type="tel" id="telephone" value="Téléphone" name="user_phone" onblur="afficher_defaut('Téléphone',this.id);" onfocus="effacer('Téléphone',this.id);"/>
+        </div>
+        
+        <div class="button" onclick="verif();">
+                Envoyer
+        </div>
+        
+    </div>     
+    <div class="message">        
+        <textarea id="message" name="user_message" onblur="afficher_defaut('Tapez votre message...',this.id);" onfocus="effacer('Tapez votre message...',this.id);">Tapez votre message...</textarea>
+    </div>    
+    
+    
+</form>
+  <img class="logoVoiture" src="img/voitures.png"/>     
+     <img class="backtotop" src="img/backToTop.png" onclick="backtotop();return false;" alt="Retour haut de page">  
+ </body>        
+      <div class="footer"></div>      
+</html>
+<!--
+
+Bloc de commentaires 
+-->

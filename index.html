@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <title>4L Sand N Sound</title>
+       
+       
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" media="screen and (min-width: 1024px)" href="main.css" type="text/css" />
+        <link rel="stylesheet" media="screen and (max-width: 1024px) and (min-width: 780px) " href="small.css" type="text/css" />
+        <link rel="stylesheet" media="screen and (max-width: 780px) and (min-width: 480px)" href="x-small.css" type="text/css" />
+        <link rel="stylesheet" media="screen and (max-width: 480px)" href="xx-small.css" type="text/css" />
+        
+        <script src="jquery-2.1.1.js"></script>
+        <script src="mesScripts.js"></script>
+        <script type="text/javascript">
+            
+function CompteARebours()
+ {
+            var date_actuelle = new Date(); // On déclare la date d'aujourd'hui.
+
+            var depart = new Date(2016, 01, 17, 8, 0, 0); // On déclare la date de Noël.
+
+            var tps_restant =  depart.getTime() - date_actuelle.getTime(); // Temps restant en millisecondes
+
+//============ CONVERSIONS
+
+var s_restantes = tps_restant / 1000; // On convertit en secondes
+var i_restantes = s_restantes / 60;
+var H_restantes = i_restantes / 60;
+var d_restants = H_restantes / 24;
+
+
+    s_restantes = Math.floor(s_restantes % 60); // Secondes restantes
+    i_restantes = Math.floor(i_restantes % 60); // Minutes restantes
+    H_restantes = Math.floor(H_restantes % 24); // Heures restantes
+    d_restants = Math.floor(d_restants); // Jours restants
+//=================
+
+
+var day = d_restants;
+var hour = H_restantes;
+var minute = i_restantes;
+var second = s_restantes;
+
+document.getElementById("jours").innerHTML = "<strong>"+day+"</strong>"+"<br/><br/>Jours" ;            
+document.getElementById("heures").innerHTML = "<strong>"+hour+"</strong>"+"<br/><br/>Heures";            
+document.getElementById("minutes").innerHTML = "<strong>"+minute+"</strong>"+"<br/><br/>Minutes" ;            
+document.getElementById("secondes").innerHTML = "<strong>"+second+"</strong>"+"<br/><br/>Secondes";            
+}
+            
+setInterval(CompteARebours, 1000); // Rappel de la fonction toutes les 1000 millisecondes (toutes les secondes quoi !).
+        
+        </script>    
+    </head>
+    
+    
+    <body class="fond">
+        
+
+   <section class="bg_youtube" style="height: 268.4px;">  
+              <!-- <a class="player" style="height: 268.4px;"
+             data-property="{  videoURL : 'B4tc05H1xRA', showControls: false, containement : 'body' , autoPlay : true, loop : true, mute : false, vol: 0, startAt : 0, opacity : 1}">
+        </a> -->
+       
+        </section>
+        
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    
+
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '100%',
+          width: '100%',
+          playerVars: { 'autoplay': 1, 'controls': 2, 'loop':1, 'playlist':"B4tc05H1xRA", 'showinfo':0, 'modestbranding':1},
+          videoId: 'B4tc05H1xRA',
+          events: {
+            'onReady': onPlayerReady,
+          }
+           
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.setVolume(0);
+          event.target.playVideo();
+        
+      } 
+        
+        //BOUTON RETOUR HAUT DE PAGE
+        var timeOut;
+function backtotop() {
+  if (document.body.scrollTop!==0 || document.documentElement.scrollTop!==0){
+    window.scrollBy(0,-50);
+    timeOut=setTimeout('backtotop()',25);
+  }
+  else clearTimeout(timeOut);
+}
+        
+   </script>
+        
+        <!--===========================================
+        MENU
+        ===========================================-->
+        <div id="bandeau_accueil" class="bandeau">
+        <ul class="liste" >
+            <li id="accueil" class="onglet"><a href="index.html">Accueil</a></li>
+            <li id="apropos" class="onglet"><a href="a_propos.html">A propos</a></li>
+            <li id="actualites" class="onglet"><a href="actualites.html">Actualités</a></li>
+            <li id="noussponsoriser" class="onglet"><a href="nous_sponsoriser.html">Nous sponsoriser</a></li>
+            <li id="nospartenaires" class="onglet"><a href="nos_partenaires.html">Nos partenaires</a></li>
+            <li id="contact" class="onglet"><a href="nous-contacter.html">Contact</a></li>       
+        
+        </ul>
+        
+        </div>
+       
+        <!--===========================================
+        LOGO
+       ===========================================-->
+      <img class="logoTop" src="img/logo.png"/>
+        
+        
+        <!--===========================================
+        COMPTE A REBOURS
+        ===========================================-->
+      
+      <ul id="compteur">
+        <li  id="jours"></li>
+        <li  id="heures"></li>
+        <li  id="minutes"></li>
+        <li  id="secondes"></li>
+        
+        </ul>
+    <!--===========================================
+        DIV PRINCIPALE
+        ===========================================-->
+        <div class="wrap">
+<!--            <h1 id="titre_accueil">4L Sand N'Sound</h1>-->
+            
+         <div class="illustration"><div id="player"></div></div>
+           
+         
+        <p id="avant-propos">
+            Notre but est de vous présenter notre projet et de vous convaincre de nous aider à le réaliser à travers une collecte de fonds. Le but final ? Participer à la <strong>19ème édition</strong> du bien connu <strong>4L Trophy</strong>.<br/>
+            De manière concise, le <strong>4L Trophy</strong> est un équivalent du Paris-Dakar, mais destiné aux étudiants et dont l'objectif principal est une <strong>mission humanitaire pour les enfants marocains</strong>, visant à leur apporter des fournitures scolaires ainsi que des équipements sportifs etc...<br/><br/><br/>
+            Nous sommes actuellement deux élèves ingénieurs de 4ème année à l'INSA de Toulouse : <strong>Thibaud Hubert</strong> en génie Automatique et éléctronique et <strong>Thibauld Amiel</strong> en génie Mécanique. Notre désir de participer à une oeuvre humanitaire , lié à la recherche constante de nouvelles expériences enrichissantes ainsi qu'au surpassement de soi-même nous conduisent donc à participer à l'aventure 4L Trophy.
+            <br/>
+            De plus, que faut-il de plus qu'un mécanicien accompagné d'un éléctricien pour réussir cette course ?!            
+        </p>
+       
+        <img class="logoTrophy" src="img/logoTrophy.png"/>
+        <br/>
+        <br/>
+            <ul id="actions_index" class="actions">
+        <li id="link-aPropos" class="bouton"></li>
+        <li id="sponsoriser" class="bouton"></li>
+        <li id="dossier" class="bouton"></li>
+            </ul>
+        </div>
+        
+                    <ul onclick="window.location='actualites.html';" id="actu">
+                        <li id="new">NEWS</li>
+                        <li id="illu"></li>
+                        <li id="titre">On ne veut pas le rater !</li>
+                    </ul>
+        
+        <img id="lien-fb" src="img/fb.png" onclick='window.open("https://www.facebook.com/4lsandnsound?fref=ts");'/>
+        <img id="lien-leechi" src="img/leetchi.png" onclick='window.open("https://www.leetchi.com/c/association-de-4l-sand-n-sound");'/>
+       
+        <img class="backtotop" src="img/backToTop.png" onclick="backtotop();return false;" alt="Retour haut de page">
+    </body>
+    
+    <div class="footer"></div>
+</html>
+<!--
+
+Bloc de commentaires 
+-->
